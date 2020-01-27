@@ -6,20 +6,17 @@ import confLogo from  '../images/badge-header.svg';
 class Badge extends React.Component {
     render() {
 
-        const firstName = "Richard";
-        const lastName = "Kaufman";
-
         return <div className="Badge">
             <div className="Badge__header">
                 <img src={confLogo} alt="Logo"/>
             </div>
             <div className="Badge__section-name">
-                <img className="Badge__avatar" src="https://api.adorable.io/avatars/90/abott@adorable.png" alt="Avatar"/>
-                <h1>{firstName}<br/>{lastName}</h1>
+                <img className="Badge__avatar" src={this.props.avatarUrl} alt="Avatar"/>
+                <h1>{this.props.firstName}<br/>{this.props.lastName}</h1>
             </div>
             <div className="Badge__section-info">
-                <h3>Jr. Front-end</h3>
-                <p>@carlosg</p>
+                <h3>{this.props.jobTitle}</h3>
+                <p>@{this.props.twitter}</p>
             </div>
             <div className="Badge__footer">
                 #platziconf
