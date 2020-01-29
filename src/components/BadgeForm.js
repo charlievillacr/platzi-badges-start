@@ -2,6 +2,8 @@ import React from 'react'
 
 class BadgeForm extends React.Component {
 
+    state = {};
+
     // Creamos método handleChange
     handleChange = e => {
         // console.log({
@@ -9,7 +11,7 @@ class BadgeForm extends React.Component {
         //     value: e.target.value,
         // });
         this.setState({
-            firstName: e.target.value
+            [e.target.name]: e.target.value,
         })
     };
    
@@ -21,7 +23,7 @@ class BadgeForm extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         console.log('Form enviado'); 
-        console.log(this.state);
+
     };
 
     render() {
@@ -29,7 +31,6 @@ class BadgeForm extends React.Component {
            <div>
                <h1>New Attendant</h1>
                <form onSubmit={this.handleSubmit}>
-
                 <div className="form-group">
                     <label>First Name</label>
                     <input
@@ -37,6 +38,7 @@ class BadgeForm extends React.Component {
                     className="form-control"
                     type="text"
                     name="firstName"
+                    value={this.state.firstName}
                     />
                 </div>
 
@@ -47,6 +49,7 @@ class BadgeForm extends React.Component {
                     className="form-control" 
                     type="text"
                     name="lastName"
+                    value={this.state.lastName}
                     />
                 </div>
 
@@ -57,6 +60,7 @@ class BadgeForm extends React.Component {
                     className="form-control"
                     type="email"
                     name="email" 
+                    value={this.state.email}
                     />
                 </div>
 
@@ -67,6 +71,7 @@ class BadgeForm extends React.Component {
                     className="form-control"
                     type="text"
                     name="jobTitle" 
+                    value={this.state.jobTitle}
                     />
                 </div>
 
@@ -77,6 +82,7 @@ class BadgeForm extends React.Component {
                     className="form-control"
                     type="text"
                     name="twitter"
+                    value={this.state.twitter}
                      />
                 </div>
 
