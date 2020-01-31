@@ -12,7 +12,7 @@ function App() {
                 <Route exact path="/badges/new" component={BadgeNew} />
             </Switch>
         </BrowserRouter>
-    )
+    );
 }
 
 export default App;
